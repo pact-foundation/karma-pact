@@ -1,0 +1,38 @@
+{
+  "name": "karma-pact",
+  "version": "0.0.1",
+  "description": "Launches a Pact Mock Server for Karma",
+  "main": "index.js",
+  "scripts": {
+    "lint": "standard"
+  },
+  "author": "Tarcio Saraiva <tarcio@gmail.com> (http://twitter.com/tarciosaraiva)",
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.12"
+  },
+  "keywords": [
+    "pact",
+    "pact-js",
+    "javascript",
+    "contract testing",
+    "testing",
+    "consumer driven testing",
+    "karma",
+    "karma-pact",
+    "karma-plugin",
+    "karma-framework"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pact-foundation/karma-pact.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pact-foundation/karma-pact/issues"
+  },
+  "homepage": "http://docs.pact.io/documentation/javascript.html",
+  "peerDependencies": {
+    "@pact-foundation/pact-node": "4.5.0",
+    "karma": "1.1.0"
+  }
+}
