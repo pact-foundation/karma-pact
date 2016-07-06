@@ -1,5 +1,7 @@
 # Karma Pact
 
+[![Build Status](https://travis-ci.org/pact-foundation/karma-pact.svg?branch=master)](https://travis-ci.org/pact-foundation/karma-pact)
+
 Implementation of a Karma Plugin to launch a Pact Mock Server before executing your Pact tests on the browser.
 
 From the [Pact website](http://docs.pact.io/):
