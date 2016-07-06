@@ -16,3 +16,11 @@ addons:
     - g++-4.8
 install: npm install
 script: npm run lint
+deploy:
+  provider: releases
+  api_key:
+    secure: mCYqIo/w8NIFgEBwPilMRq9pZGULPE+oGH7x5Jp/vR8+uP3Qskvgg1lqZ4rdfeQ37m/RL4UKtQ/tRVPOwrTtZHnIg2atSItogC+y6RBfXOp4keORNOGA2ic4oxpsg+aZY6XlhXGHb1O8k0GhXu+btSBfIEISqQIOPOuLYxM/E0/tRsdi4Bw3wqj4T2j5W2aNg9G5DbDaJkq+S1hMNan8tkvscC7XTp3O7cqIEJkOe4NbOO+k9QGLIPbZ4Nf/JPeDfeJ/Slf99yxv9Lvy7MSJNqNkN8xmS93sjU4WeY5YHvDuiQZO/HBPHyBWjBmnrUReiZ3cCS5aSEPrw4t+yi71uDrLemUMnPRjecx/AM8gTxAfAZF98XyDl1SAzDWuPp2o0q+hKlJyQoXF6qqVDWTu4zkHljLhrjDVNyIewnt5ONdGw+8n64nRqL7f51Yy8O7Kw5VBgG9RmNhHLrTzMvoX+b5RLPCBxbzaO+GXGNoo9w3/Ehntbg4WeUR1DG1z1Fy7a4F9TPTv6GX8ArmOt1478ITJiwWBsmfpv1rEr5CakCanLxnctFSclDxISV+qgmX9brqz+n0X7XZV85dzL1ahBio8dZXzNzWDhe05lOWe8I4sZRbuSAKaGxPhO8fkcSSSz0tq8nO2j6vtjjypByggtkQlKC5WlmDYnRhqWr7gWFo=
+  file: index.js
+  on:
+    tags: true
+    node: '6'

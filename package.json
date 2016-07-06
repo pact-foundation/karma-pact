@@ -34,5 +34,8 @@
   "peerDependencies": {
     "@pact-foundation/pact-node": "4.5.0",
     "karma": "1.1.0"
+  },
+  "devDependencies": {
+    "standard": "7.1.2"
   }
 }
