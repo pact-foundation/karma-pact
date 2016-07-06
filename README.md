@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/pact-foundation/karma-pact.svg?branch=master)](https://travis-ci.org/pact-foundation/karma-pact)
 
-Implementation of a Karma Plugin to launch a Pact Mock Server before executing your Pact tests on the browser.
+Implementation of a Karma Plugin to launch a [Pact Mock Server](https://github.com/pact-foundation/pact-node) before executing your [Pact tests](https://github.com/pact-foundation/pact-js) on the browser.
 
 From the [Pact website](http://docs.pact.io/):
 
@@ -16,6 +16,46 @@ From the [Pact website](http://docs.pact.io/):
 
 Read [Getting started with Pact](http://dius.com.au/2016/02/03/microservices-pact/) for more information on
 how to get going.
+
+## Installation
+
+First install the package from NPM:
+
+```
+npm install --save-dev karma-pact
+```
+
+Then, on your Karma Configuration file, add the below:
+
+```javascript
+module.exports = function (config) {
+  config.set({
+    // in here we are simply telling to use Jasmine with Pact
+    frameworks: ['jasmine', 'pact'],
+    // the Pact opts will go here
+    pact: {}
+  })
+```
+
+The `pact` configuration in the file is as follows (same present at [pact-node](https://github.com/pact-foundation/pact-node)):
+
+```javascript
+{
+  port: <Number>,     // Port number that the server runs on, defaults to 1234
+  host: <String>,     // Host on which to bind the server on, defaults to 'localhost'
+  log: <String>,      // File to log output on relative to current working directory, defaults to none
+  ssl: <Boolean>,     // Create a self-signed SSL cert to run the server over HTTPS , defaults to 'false'
+  cors: <Boolean>,    // Allow CORS OPTION requests to be accepted, defaults to 'false'
+  dir: <String>,      // Directory to write the pact contracts relative to the current working directory, defaults to none
+  spec: <Number>,     // The pact specification version to use when writing pact contracts, defaults to '1'
+  consumer: <String>, // The name of the consumer to be written to the pact contracts, defaults to none
+  provider: <String>  // The name of the provider to be written to the pact contracts, defaults to none
+}
+```
+
+## Examples
+
+Check the `karma` folder under [Pact JS](https://github.com/pact-foundation/pact-js) for examples with Mocha and Jasmine.
 
 ## Contributing
 1. Fork it
