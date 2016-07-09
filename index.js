@@ -6,17 +6,22 @@ var runPactMockServer = function (opts) {
   opts.log = opts.log || path.resolve(process.cwd(), 'logs', 'mockserver-integration.log')
   opts.dir = opts.dir || path.resolve(process.cwd(), 'pacts')
   opts.spec = opts.spec || 2
+  opts.logLevel = opts.logLevel
 
-  wrapper.createServer(opts).start().then(function () {
-    console.log('Pact Mock server started on port: ' + opts.port)
-  })
+  if (opts.logLevel) {
+    wrapper.logLevel(opts.logLevel)
+  }
+
+  var server = wrapper.createServer(opts)
+  server.start()
+  console.log('Provider Mock Server running on port: ' + opts.port)
 
   process.on('SIGINT', function () {
     wrapper.removeAllServers()
   })
 }
 
-runPactMockServer.$inject = ['config.pact.opts']
+runPactMockServer.$inject = ['config.pact']
 
 module.exports = {
   'framework:pact': ['factory', runPactMockServer]
