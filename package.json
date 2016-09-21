@@ -1,6 +1,6 @@
 {
   "name": "karma-pact",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Launches a Pact Mock Server for Karma",
   "main": "index.js",
   "scripts": {
@@ -32,10 +32,10 @@
   },
   "homepage": "http://docs.pact.io/documentation/javascript.html",
   "peerDependencies": {
-    "@pact-foundation/pact-node": "4.5.1",
-    "karma": "^1.1.0"
+    "@pact-foundation/pact-node": "4.x",
+    "karma": "1.x"
   },
   "devDependencies": {
-    "standard": "7.1.2"
+    "standard": "8.x"
   }
 }
