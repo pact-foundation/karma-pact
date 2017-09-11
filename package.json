@@ -1,6 +1,10 @@
 {
   "name": "karma-pact",
+<<<<<<< HEAD
   "version": "0.1.0",
+=======
+  "version": "0.0.8",
+>>>>>>> 39289a8c57315495ea4c616b60cca379c460d5cf
   "description": "Launches a Pact Mock Server for Karma",
   "main": "index.js",
   "scripts": {
