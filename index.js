@@ -8,7 +8,17 @@ var runPactMockServer = function (opts, logger) {
     opts = {}
   }
 
-  opts.port = opts.port || 1234
+  if (opts.port && opts.ports) {
+    log.info('The Pact Mock Server karma configuration can not specify both {port} and {ports} fields')
+    process.exit(1)
+  }
+
+  if ((!opts.port && !opts.ports)) {
+    opts.port = 1234
+    log.info('No Pact Mock Server port configuration specified. Using port ' + opts.port)
+  }
+
+  opts.ports = opts.port ? [opts.port] : opts.ports
   opts.log = opts.log || path.resolve(process.cwd(), 'logs', 'mockserver-integration.log')
   opts.dir = opts.dir || path.resolve(process.cwd(), 'pacts')
   opts.spec = opts.spec || 2
@@ -18,10 +28,14 @@ var runPactMockServer = function (opts, logger) {
     wrapper.logLevel(opts.logLevel)
   }
 
-  var server = wrapper.createServer(opts)
-  server.start()
-  server.on('start', function () {
-    log.info('Provider Mock Server running on port: ' + opts.port)
+  opts.ports.forEach(function (port) {
+    var serverOpts = JSON.parse(JSON.stringify(opts))
+    serverOpts.port = port
+    var server = wrapper.createServer(serverOpts)
+    server.start()
+    server.on('start', function (server) {
+      log.info('Provider Mock Server running on port: ' + server._options.port)
+    })
   })
 
   process.on('SIGINT', function () {
