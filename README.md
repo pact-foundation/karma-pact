@@ -42,6 +42,7 @@ The `pact` configuration in the file is as follows (same present at [pact-node](
 ```javascript
 {
   port: <Number>,     // Port number that the server runs on, defaults to 1234
+  ports: [<Number>],  // Array of port numbers to run multiple servers. {ports} and are {port} mutually exclusive 
   host: <String>,     // Host on which to bind the server on, defaults to 'localhost'
   log: <String>,      // File to log output on relative to current working directory, defaults to none
   ssl: <Boolean>,     // Create a self-signed SSL cert to run the server over HTTPS , defaults to 'false'
@@ -58,6 +59,12 @@ The `pact` configuration in the file is as follows (same present at [pact-node](
 ## Examples
 
 Check the `karma` folder under [Pact JS](https://github.com/pact-foundation/pact-js) for examples with Mocha and Jasmine.
+
+## Running multiple Pact Mock Servers
+
+In some situations it may be useful to run multiple Pact Mock Servers. For instance, when running tests with karma, if a consumer 
+defines contracts for several providers, the generated Pact contracts may be mixed up. A solution to solve this is to
+run one Pact Mock Server per provider. For more info, see [pact-js issue #59](https://github.com/pact-foundation/pact-js/issues/59)
 
 ## Contributing
 1. Fork it
