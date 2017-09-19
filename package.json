@@ -7,6 +7,9 @@
 	"contributors": [
 		"Michel Boudreau <michelboudreau@gmail.com> (codinghitchhiker.com)"
 	],
+	"publishConfig": {
+		"access": "public"
+	},
 	"license": "MIT",
 	"engines": {
 		"node": ">=4"
