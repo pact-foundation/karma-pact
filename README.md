@@ -22,7 +22,7 @@ how to get going.
 First install the package from NPM:
 
 ```
-npm install --save-dev karma-pact
+npm install --save-dev @pact-foundation/karma-pact
 ```
 
 Then, on your Karma Configuration file, add the below:
@@ -42,9 +42,13 @@ module.exports = function (config) {
 };
 ```
 
-The `pact` option can be configured using a single object to spin up a single service, or can be passed an array of objects which will spin up multiple pact services.  Please be sure not to have 
-the same port number between options as they will conflict with each other.  All options are optional and are passed directly into [Pact Node](https://github
-.com/pact-foundation/pact-node#create-pact-mock-server), which has the full list of available options, but it would be recommended to specify the port number at the least to prevent confusion.
+The `pact` option can be configured using a single object to spin up a single service, or can be passed an array of objects which will spin up multiple pact services, representing each of your various provider services.
+
+Please be sure not to have 
+the same port number between options as they will conflict with each other. All options are passed directly into [Pact Node](https://github
+.com/pact-foundation/pact-node#create-pact-mock-server), which has the full list of available options. 
+
+It is recommended, however, to specify the port number, consumer and provider at a minimum to prevent common issues.
 
 ## Examples
 
