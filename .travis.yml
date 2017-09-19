@@ -1,13 +1,16 @@
 language: node_js
 node_js:
-- '4'
-- '5'
-- '6'
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+os:
+  - linux
+  - osx
 env:
   matrix:
   - CXX=g++-4.8
-  global:
-  - secure: ju30KDpSYrw+nd2MmZTOjCTJu+gFNDy9auc6h/K9HhWgGX9zQ2cX0Vq4LX5EHWCImyPoVuyuxiouHoWB/eYcDtyDUoXb+EzNn/i+JXVWteQVRdbgnbDNHccGIpMYwEBrslg+iZWz5/SuxeqB/R0jd7MDK6oQBhWKAXgEYNOBEnRh814jryf93gQc8s4gONq2QoSiFk5QwDfqbvoK2o/4RsGGu3YBxy9/O8LhPTiI9YpdtjxmQtdgbchXLU0/oxv/7P/Etc5Z/0uqRwuF6YMZhJE6FT4ytLCDjaldYyMUAQ2YCT13UfouOO2gZYG0w+zpVGJ+e0hi/+6y1BCew/qNwTylMapcMpMCOsc2XLLD0HZoDrYprx8nUjZd0X859Rod+AWWEQnUhtFR7vqv69zwaH5TFR6l9uh+TragdgWUhJvWvupl1i26JBh0G1dFfWaU+rK/bmcsHK2ioPz2Ij+XrEdJV4KFtc7HPDWV1nCmiX5LA+cypDdfCNQehIufe6gArUUsV/vwtyEkTeOwzJAFgvOgufeZSivhttm/loalD1kX1JLrdR1ebxARvK2zSszeBYlFBwGCuK6sWup5Ace5TX39Ff6TRyO3YCTzaOd6k4w+Fsk93SkKLhGrDby21yIcmrkPdpDLjvR70SLb+OepemISktQpeMPrBTdfQU3J5G4=
 addons:
   apt:
     sources:
@@ -16,20 +19,15 @@ addons:
     - g++-4.8
 matrix:
   fast_finish: true
-install: npm install
-script: npm run lint
 deploy:
-  - provider: releases
-    api_key:
-      secure: mCYqIo/w8NIFgEBwPilMRq9pZGULPE+oGH7x5Jp/vR8+uP3Qskvgg1lqZ4rdfeQ37m/RL4UKtQ/tRVPOwrTtZHnIg2atSItogC+y6RBfXOp4keORNOGA2ic4oxpsg+aZY6XlhXGHb1O8k0GhXu+btSBfIEISqQIOPOuLYxM/E0/tRsdi4Bw3wqj4T2j5W2aNg9G5DbDaJkq+S1hMNan8tkvscC7XTp3O7cqIEJkOe4NbOO+k9QGLIPbZ4Nf/JPeDfeJ/Slf99yxv9Lvy7MSJNqNkN8xmS93sjU4WeY5YHvDuiQZO/HBPHyBWjBmnrUReiZ3cCS5aSEPrw4t+yi71uDrLemUMnPRjecx/AM8gTxAfAZF98XyDl1SAzDWuPp2o0q+hKlJyQoXF6qqVDWTu4zkHljLhrjDVNyIewnt5ONdGw+8n64nRqL7f51Yy8O7Kw5VBgG9RmNhHLrTzMvoX+b5RLPCBxbzaO+GXGNoo9w3/Ehntbg4WeUR1DG1z1Fy7a4F9TPTv6GX8ArmOt1478ITJiwWBsmfpv1rEr5CakCanLxnctFSclDxISV+qgmX9brqz+n0X7XZV85dzL1ahBio8dZXzNzWDhe05lOWe8I4sZRbuSAKaGxPhO8fkcSSSz0tq8nO2j6vtjjypByggtkQlKC5WlmDYnRhqWr7gWFo=
-    file: index.js
-    on:
-      tags: true
-      node: '6'
-  - provider: npm
-    email: tarcio@gmail.com
-    api_key:
-      secure: QuuJ2+tZnB5bTtCyQVP14yu6+vQqC/3RlI/KknXrzM2KzbgBDclWRbEo500iZ7MiTAjMxoiyQgr2+UuxDO4lnVzZkndLgq2ILv41kATX6DmLG40sZBi3/7dLh6u9u6Ishz27+E0sPErY/lxBX3tnpItverBJNyqqQs2IxuTFX1V0efFGsGLt6/8oH6B2H849idI5wvl8ezIWZeQ8xhb6EMOtniWJQbsRrDvB3xT0Jgbq/ZWNE1g+iXE0MHSgc12zuU63JMt242tYyFheXux4d03AifO4lqBwwb/R7kInhgjgTxZhHCRegnnqnnWAGFrnkgAdlosGz6PTSax7/4dH34pzIltzrcx/dAowisVxQMnAXnAxyYm4ftEYLJAXmyadkysvMDYvM84jSDguaxIlwBcsTtv7M9gFHFBWRQmoBEcJIMllLd5MvSNXmcINnDi61daS6vhCLDEUvCIwGkSFG2ljM1Q3HrIAZ0XYZgB/U0N8540B3okLDm1MfodWPWr4HprqWEFuprcDMrjFHYCllpiMfiEQ55uhknxlM9GaCpjRi3Em5UU1wtRNbmaqY8mUpUknQtcc9NWB6XRRWb7tZ7B2LRwqoRQUkOywJxBLtVb5axivYLo9go2ZjTF85UNM5b/bbTVGcBkSRZQTmOi5n4x7xLml1rYHjCZsYjMmqCQ=
-    on:
-      tags: true
-      node: '6'
+- provider: npm
+  skip_cleanup: true
+  email: pact-foundation@googlegroups.com
+  api_key:
+    secure: "PG706JT8JLGZpQyi4eiFaCbq47I+2/9Mb8hz9/zGa6Fewq0+ezTNYmffQCBpf92BbcKdNCKoliudncurhC+/XV2TEd6VUitZNCMizCbsIKJnrthtMGgVADgfbooFBpyD4m5n87xXNV8YmKUTyBVpCASra6mnEhqHBPn2cZPqc+yKOXLHpsansGyQP0gfUpYFMlyFsPiKW2Jp12vvNbR3sCSmsTrwF8oiGoLPYIDl88vHCPpk8x8/PoOjSHUmlYVdR0y9oSXU/K8SMY0JdMVQUxUQV37aoIO/zYA6IocJtibsmsD6h7+29Hz1Moyb8fgsa6N+yI2bEPIacfm1bvoHUinLm8/FyQZZ3+19xch8k3kq0qOaiNjTr+equASbDgLPN/N0RGu1ES1y/p2mGTtTaDH7uAr9gO5DUol2mhMHrZnA9fZ5bPPywcDdvKxGTWiOZTWuARmwuRcmkXO1FogkllfYZMwGw+h8DqOTTfV4SUXHszJNOXGx6RYpwI9o17QFzzhX3+vAAb9Z4J2TRu2hTCuVA2ojmw42uhXizwGffLqd7oa3Iah9tyyuTK9/sASeoFfRQIoDKt5XSlIOVhnDQinCPTRyCXJRIAEAVONiJgkxfYbIzLWLGO6szqhPw463JwRdmCdBNsXRVKON9JY8oalQOoQcG7WDOwOiMsehvt0="
+  on:
+    branch: master
+    tags: true
+    node: 6
+after_failure:
+- find . -iname '*.log' -print0 | xargs -0 cat

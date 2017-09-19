@@ -32,32 +32,19 @@ module.exports = function (config) {
   config.set({
     // in here we are simply telling to use Jasmine with Pact
     frameworks: ['jasmine', 'pact'],
-    // the Pact opts will go here
-    pact: {}
-  })
-```
-
-The `pact` configuration in the file is as follows. It is made up of an array of pact server configuration objects (same as present at [pact-node](https://github.com/pact-foundation/pact-node)).
-This enables starting multiple Pact Mock Servers.
-Note that if only one server is required there is no need to include its configuration in an array.
-
-```javascript
-[
-    {
-      port: <Number>,     // Port number that the server runs on, defaults to 1234
-      host: <String>,     // Host on which to bind the server on, defaults to 'localhost'
-      log: <String>,      // File to log output on relative to current working directory, defaults to none
-      ssl: <Boolean>,     // Create a self-signed SSL cert to run the server over HTTPS , defaults to 'false'
-      sslcert: <String>,  // Path to a custom self-signed SSL cert file, 'ssl' option must be set to true to use this option. Defaults to none
-      sslkey: <String>,   // Path a custom key and self-signed SSL cert key file, 'ssl' option must be set to true to use this option. Defaults to none
-      cors: <Boolean>,    // Allow CORS OPTION requests to be accepted, defaults to 'false'
-      dir: <String>,      // Directory to write the pact contracts relative to the current working directory, defaults to none
-      spec: <Number>,     // The pact specification version to use when writing pact contracts, defaults to '1'
-      consumer: <String>, // The name of the consumer to be written to the pact contracts, defaults to none
-      provider: <String>  // The name of the provider to be written to the pact contracts, defaults to none
+    // the Pact options will go here
+    pact: {
+    	port: 1234,
+    	consumer: "some-consumer",
+    	provider: "some-provider"
     }
-]
+  });
+};
 ```
+
+The `pact` option can be configured using a single object to spin up a single service, or can be passed an array of objects which will spin up multiple pact services.  Please be sure not to have 
+the same port number between options as they will conflict with each other.  All options are optional and are passed directly into [Pact Node](https://github
+.com/pact-foundation/pact-node#create-pact-mock-server), which has the full list of available options, but it would be recommended to specify the port number at the least to prevent confusion.
 
 ## Examples
 
@@ -70,6 +57,7 @@ defines contracts for several providers, the generated Pact contracts may be mix
 run one Pact Mock Server per provider.
 
 ## Contributing
+
 1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
@@ -80,7 +68,6 @@ If you would like to implement `Pact` in another language, please check out the 
 
 The vision is to have a compatible `Pact` implementation in all the commonly used languages, your help would be greatly appreciated!
 
-## Contact
+## Questions?
 
-* Twitter: [@pact_up](https://twitter.com/pact_up)
-* Google users group: https://groups.google.com/forum/#!forum/pact-support
+Please search for potential answers or post question on our [official Pact StackOverflow](https://stackoverflow.com/questions/tagged/pact).
