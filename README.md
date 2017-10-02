@@ -45,8 +45,7 @@ module.exports = function (config) {
 The `pact` option can be configured using a single object to spin up a single service, or can be passed an array of objects which will spin up multiple pact services, representing each of your various provider services.
 
 Please be sure not to have 
-the same port number between options as they will conflict with each other. All options are passed directly into [Pact Node](https://github
-.com/pact-foundation/pact-node#create-pact-mock-server), which has the full list of available options. 
+the same port number between options as they will conflict with each other. All options are passed directly into [Pact Node](https://github.com/pact-foundation/pact-node#create-pact-mock-server), which has the full list of available options. 
 
 It is recommended, however, to specify the port number, consumer and provider at a minimum to prevent common issues.
 
