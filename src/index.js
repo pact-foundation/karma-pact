@@ -9,12 +9,14 @@ var runPactMockServer = function (pacts, logger) {
 		pacts = [pacts];
 	}
 
-	pacts.forEach(function (pact) {
+	return Promise.all(pacts.map(function (pact) {
 		var server = wrapper.createServer(pact);
-		server.start().then(function () {
-			log.info('Provider Mock Server running port: ' + server._options.port);
+		return server.start().then(function () {
+			log.info('Pact Mock Server running on port: ' + server.options.port);
+		}, function (err) {
+			log.error('Error while trying to run karma-pact: ' + err);
 		});
-	});
+	}));
 };
 
 runPactMockServer.$inject = ['config.pact', 'logger'];
