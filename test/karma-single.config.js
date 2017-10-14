@@ -11,7 +11,7 @@ module.exports = function (config) {
 			consumer: 'some-consumer',
 			provider: 'some-provider'
 		},
-		files: ['./*.spec.js'],
+		files: ['./single.spec.js'],
 		port: 9876,
 		colors: true,
 		browsers: ['PhantomJS'],
