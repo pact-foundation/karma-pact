@@ -1,6 +1,6 @@
 {
   "name": "@pact-foundation/karma-pact",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Launches a Pact Mock Server for Karma",
   "main": "./src/index.js",
   "author": "Michel Boudreau <michelboudreau@gmail.com> (codinghitchhiker.com)",
@@ -34,10 +34,10 @@
   },
   "homepage": "http://docs.pact.io/documentation/javascript.html",
   "peerDependencies": {
-    "karma": "^1.0.0"
+    "karma": "^1.0.0",
+    "@pact-foundation/pact-node": "^5.1.2"
   },
   "dependencies": {
-    "@pact-foundation/pact-node": "^5.1.2",
     "bluebird": "^3.5.1",
     "deasync": "^0.1.10"
   },
