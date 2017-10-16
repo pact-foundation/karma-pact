@@ -32,12 +32,20 @@ module.exports = function (config) {
   config.set({
     // in here we are simply telling to use Jasmine with Pact
     frameworks: ['jasmine', 'pact'],
-    // the Pact options will go here
-    pact: {
+	// the Pact options will go here, you can start
+	// as many providers as you need
+    pact: [{
     	port: 1234,
     	consumer: "some-consumer",
-    	provider: "some-provider"
-    }
+    	provider: "some-provider",
+		dir: "pact/files/go/here",
+		log: "log/files/go/here"
+	}],
+	// ensure Pact and default karma plugins are loaded
+    plugins: [
+      'karma-*',
+      '@pact-foundation/karma-pact',
+    ],
   });
 };
 ```
