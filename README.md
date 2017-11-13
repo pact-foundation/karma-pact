@@ -22,10 +22,10 @@ how to get going.
 First install the package from NPM:
 
 ```
-npm install --save-dev @pact-foundation/karma-pact
+npm install --save-dev @pact-foundation/karma-pact @pact-foundation/pact-node
 ```
 
-Then, on your Karma Configuration file, add the below:
+Pact-node must be installed as a peer dependency of karma-pact, as to allow developers to have more freedom to use any version of pact-node. Then, on your Karma Configuration file, add the below:
 
 ```javascript
 module.exports = function (config) {
