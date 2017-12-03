@@ -1,6 +1,6 @@
 {
   "name": "@pact-foundation/karma-pact",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "Launches a Pact Mock Server for Karma",
   "main": "./src/index.js",
   "author": "Michel Boudreau <michelboudreau@gmail.com> (codinghitchhiker.com)",
@@ -35,7 +35,7 @@
   "homepage": "http://docs.pact.io/documentation/javascript.html",
   "peerDependencies": {
     "karma": "^1.0.0",
-    "@pact-foundation/pact-node": "^5.1.2"
+    "@pact-foundation/pact-node": "6.x.x"
   },
   "dependencies": {
     "bluebird": "^3.5.1",
@@ -53,11 +53,14 @@
     "karma-phantomjs-launcher": "^1.0.4",
     "karma-spec-reporter": "0.0.31",
     "@pact-foundation/pact-node": "^5.1.2",
-    "phantomjs-prebuilt": "^2.1.15"
+    "phantomjs-prebuilt": "^2.1.15",
+    "standard-version": "^4.2.0"
   },
   "scripts": {
     "test": "npm run test:single && npm run test:multiple",
     "test:single": "karma start test/karma-single.config.js",
-    "test:multiple": "karma start test/karma-multiple.config.js"
+    "test:multiple": "karma start test/karma-multiple.config.js",
+    "prerelease": "npm i && npm t && rm package-lock.json",
+    "release": "standard-version"
   }
 }
