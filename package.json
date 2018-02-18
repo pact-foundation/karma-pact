@@ -34,27 +34,27 @@
   },
   "homepage": "http://docs.pact.io/documentation/javascript.html",
   "peerDependencies": {
-    "karma": "^1.0.0",
+    "karma": "1.0.0",
     "@pact-foundation/pact-node": "6.x.x"
   },
   "dependencies": {
-    "bluebird": "^3.5.1",
-    "deasync": "^0.1.10"
+    "bluebird": "3.5.1",
+    "deasync": "0.1.12"
   },
   "devDependencies": {
-    "chai": "^4.1.2",
-    "chai-as-promised": "^7.1.1",
-    "jasmine-core": "^2.8.0",
-    "jasmine-spec-reporter": "^4.2.1",
-    "jasminewd2": "^2.2.0",
-    "karma": "^1.0.0",
-    "karma-chai": "^0.1.0",
-    "karma-jasmine": "^1.1.0",
-    "karma-phantomjs-launcher": "^1.0.4",
+    "chai": "4.1.2",
+    "chai-as-promised": "7.1.1",
+    "jasmine-core": "2.8.0",
+    "jasmine-spec-reporter": "4.2.1",
+    "jasminewd2": "2.2.0",
+    "karma": "1.0.0",
+    "karma-chai": "0.1.0",
+    "karma-jasmine": "1.1.0",
+    "karma-phantomjs-launcher": "1.0.4",
     "karma-spec-reporter": "0.0.31",
-    "@pact-foundation/pact-node": "^6.1.0",
-    "phantomjs-prebuilt": "^2.1.15",
-    "standard-version": "^4.2.0"
+    "@pact-foundation/pact-node": "6.1.0",
+    "phantomjs-prebuilt": "2.1.15",
+    "standard-version": "4.2.0"
   },
   "scripts": {
     "test": "npm run test:single && npm run test:multiple",
