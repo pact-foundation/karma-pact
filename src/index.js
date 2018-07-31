@@ -1,9 +1,8 @@
 var wrapper = require('@pact-foundation/pact-node');
-var bluebird = require("bluebird");
+var promise = Promise || require("bluebird");
 var deasync = require('deasync');
 
 var runPactMockServer = function (pacts, logger) {
-	var promise = Promise || bluebird;
 	var log = logger.create('pact');
 	pacts = pacts || [];
 
