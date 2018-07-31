@@ -1,19 +1,19 @@
 var wrapper = require('@pact-foundation/pact-node');
-var Promise = require("bluebird");
+var promise = Promise || require("bluebird");
 var deasync = require('deasync');
 
 var runPactMockServer = function (pacts, logger) {
 	var log = logger.create('pact');
 	pacts = pacts || [];
-	
+
 	// If pact options is object, wrap in array
 	if (!Array.isArray(pacts)) {
 		pacts = [pacts];
 	}
-	
+
 	var done = false;
-	
-	Promise.all(pacts.map(function (pact) {
+
+	promise.all(pacts.map(function (pact) {
 		var server = wrapper.createServer(pact);
 		return server.start().then(function () {
 			log.info('Pact Mock Server running on port: ' + server.options.port);
@@ -23,7 +23,7 @@ var runPactMockServer = function (pacts, logger) {
 	})).then(function() {
 		done = true;
 	});
-	
+
 	deasync.loopWhile(function(){return !done;});
 };
 
