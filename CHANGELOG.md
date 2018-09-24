@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.1.9"></a>
+## [2.1.9](https://github.com/pact-foundation/karma-pact/compare/v2.1.8...v2.1.9) (2018-09-24)
+
+
+
 <a name="2.1.8"></a>
 ## [2.1.8](https://github.com/pact-foundation/karma-pact/compare/v2.1.7...v2.1.8) (2018-08-17)
 
