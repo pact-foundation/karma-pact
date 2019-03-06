@@ -35,7 +35,7 @@
   "homepage": "http://docs.pact.io/documentation/javascript.html",
   "peerDependencies": {
     "karma": ">=1.0.0",
-    "@pact-foundation/pact-node": "^6.0.0"
+    "@pact-foundation/pact-node": "^6.0.0 || ^7.0.0" 
   },
   "dependencies": {
     "bluebird": "3.5.1",
