@@ -1,6 +1,6 @@
 {
   "name": "@pact-foundation/karma-pact",
-  "version": "2.1.9",
+  "version": "2.2.0",
   "description": "Launches a Pact Mock Server for Karma",
   "main": "./src/index.js",
   "author": "Michel Boudreau <michelboudreau@gmail.com> (codinghitchhiker.com)",
@@ -35,26 +35,26 @@
   "homepage": "http://docs.pact.io/documentation/javascript.html",
   "peerDependencies": {
     "karma": ">=1.0.0",
-    "@pact-foundation/pact-node": "^6.0.0 || ^7.0.0" 
+    "@pact-foundation/pact-node": ">6.0.0"
   },
   "dependencies": {
-    "bluebird": "3.5.1",
+    "bluebird": "3.5.3",
     "deasync": "^0.1.13"
   },
   "devDependencies": {
-    "chai": "4.1.2",
+    "@pact-foundation/pact-node": "^7.0.1",
+    "chai": "4.2.0",
     "chai-as-promised": "7.1.1",
-    "jasmine-core": "2.8.0",
+    "jasmine-core": "3.3.0",
     "jasmine-spec-reporter": "4.2.1",
     "jasminewd2": "2.2.0",
-    "karma": "1.0.0",
+    "karma": "4.0.1",
     "karma-chai": "0.1.0",
-    "karma-jasmine": "1.1.0",
+    "karma-jasmine": "2.0.1",
     "karma-phantomjs-launcher": "1.0.4",
-    "karma-spec-reporter": "0.0.31",
-    "@pact-foundation/pact-node": "6.1.0",
-    "phantomjs-prebuilt": "2.1.15",
-    "standard-version": "4.2.0"
+    "karma-spec-reporter": "0.0.32",
+    "phantomjs-prebuilt": "2.1.16",
+    "standard-version": "5.0.1"
   },
   "scripts": {
     "test": "npm run test:single && npm run test:multiple",

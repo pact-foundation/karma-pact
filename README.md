@@ -1,6 +1,7 @@
 # Karma Pact
 
 [![Build Status](https://travis-ci.org/pact-foundation/karma-pact.svg?branch=master)](https://travis-ci.org/pact-foundation/karma-pact)
+[![Known Vulnerabilities](https://snyk.io/test/github/pact-foundation/karma-pact/badge.svg?targetFile=package.json)](https://snyk.io/test/github/pact-foundation/karma-pact?targetFile=package.json)
 
 Implementation of a Karma Plugin to launch a [Pact Mock Server](https://github.com/pact-foundation/pact-node) before executing your [Pact tests](https://github.com/pact-foundation/pact-js) on the browser.
 
