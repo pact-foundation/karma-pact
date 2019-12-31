@@ -1,5 +1,4 @@
 var wrapper = require('@pact-foundation/pact-node');
-var promise = Promise || require("bluebird");
 var deasync = require('deasync');
 
 var runPactMockServer = function (pacts, logger) {
@@ -11,20 +10,28 @@ var runPactMockServer = function (pacts, logger) {
 		pacts = [pacts];
 	}
 
-	var done = false;
+	var startingServers = [];
 
-	promise.all(pacts.map(function (pact) {
+	pacts.map(function (pact) {
 		var server = wrapper.createServer(pact);
-		return server.start().then(function () {
+		server.start().then(function () {
 			log.info('Pact Mock Server running on port: ' + server.options.port);
+			// Remove current server from starting servers array
+			startingServers = startingServers.filter(x => x !== server.options.port);
 		}, function (err) {
 			log.error('Error while trying to run karma-pact: ' + err);
 		});
-	})).then(function() {
-		done = true;
+		// Add current server to starting servers array
+		startingServers.push(server.options.port);
 	});
 
-	deasync.loopWhile(function(){return !done;});
+	deasync.loopWhile(function () {
+		return !isMockServerReady();
+	});
+
+	function isMockServerReady() {
+		return startingServers.length === 0;
+	}
 };
 
 runPactMockServer.$inject = ['config.pact', 'logger'];
