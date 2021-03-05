@@ -1,4 +1,4 @@
-var wrapper = require('@pact-foundation/pact-node');
+var wrapper = require('@pact-foundation/pact-core');
 var deasync = require('deasync');
 
 var runPactMockServer = function (pacts, logger) {
