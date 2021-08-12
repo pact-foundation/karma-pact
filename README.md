@@ -76,10 +76,8 @@ run one Pact Mock Server per provider.
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
 
-If you would like to implement `Pact` in another language, please check out the [Pact specification](https://github.com/bethesque/pact-specification) and have a chat to one of us on the [pact-dev Google group](https://groups.google.com/forum/#!forum/pact-support).
-
 The vision is to have a compatible `Pact` implementation in all the commonly used languages, your help would be greatly appreciated!
 
 ## Questions?
 
-Please search for potential answers or post question on our [official Pact StackOverflow](https://stackoverflow.com/questions/tagged/pact).
+Please search for potential answers or post question on our [official Pact StackOverflow](https://stackoverflow.com/questions/tagged/pact), or join us on [Slack](https://slack.pact.io)
