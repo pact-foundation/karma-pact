@@ -1,6 +1,20 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [3.0.0](https://github.com/pact-foundation/karma-pact/compare/v2.3.1...v3.0.0) (2021-08-12)
+
+
+### ⚠ BREAKING CHANGES
+
+* Drop support for karma < 5.x.x and pact-node < 10.13.x
+
+### Features
+
+* **karma:** Migrating to karmas async support ([dfb071a](https://github.com/pact-foundation/karma-pact/commit/dfb071ad6e0e2f7b483c30b7228f8caebfd21f49))
+
+
+* Drop support for karma < 5.x.x and pact-node < 10.13.x ([4710b66](https://github.com/pact-foundation/karma-pact/commit/4710b669e3c547d809fe5e6b2f89ee9495387925))
 
 ## [2.3.1](https://github.com/pact-foundation/karma-pact/compare/v2.3.0...v2.3.1) (2020-01-01)
 
