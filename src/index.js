@@ -1,8 +1,7 @@
 var wrapper = require('@pact-foundation/pact-node');
-var deasync = require('deasync');
 
-var runPactMockServer = function (pacts, logger) {
-	var log = logger.create('pact');
+const runPactMockServer = (pacts, logger) => {
+	const log = logger.create('karma-pact');
 	pacts = pacts || [];
 
 	// If pact options is object, wrap in array
@@ -10,28 +9,21 @@ var runPactMockServer = function (pacts, logger) {
 		pacts = [pacts];
 	}
 
-	var startingServers = [];
-
-	pacts.map(function (pact) {
-		var server = wrapper.createServer(pact);
-		server.start().then(function () {
-			log.info('Pact Mock Server running on port: ' + server.options.port);
-			// Remove current server from starting servers array
-			startingServers = startingServers.filter(x => x !== server.options.port);
-		}, function (err) {
-			log.error('Error while trying to run karma-pact: ' + err);
-		});
-		// Add current server to starting servers array
-		startingServers.push(server.options.port);
-	});
-
-	deasync.loopWhile(function () {
-		return !isMockServerReady();
-	});
-
-	function isMockServerReady() {
-		return startingServers.length === 0;
-	}
+	return Promise.all(
+		pacts.map(pact => {
+			log.info("Starting Pact Mock Server...")
+			const server = wrapper.createServer(pact);
+			server.start()
+				.then(
+					() => {
+						log.info('Pact Mock Server running on port: ' + server.options.port);
+					},
+					(err) => {
+						log.error('Failed to start Pact Mock Server ' + err)
+					}
+				);
+		})
+	);
 };
 
 runPactMockServer.$inject = ['config.pact', 'logger'];

@@ -34,15 +34,11 @@
   },
   "homepage": "http://docs.pact.io/documentation/javascript.html",
   "peerDependencies": {
-    "karma": ">=1.0.0",
-    "@pact-foundation/pact-node": ">6.0.0"
-  },
-  "dependencies": {
-    "bluebird": "3.5.3",
-    "deasync": "^0.1.13"
+    "karma": ">=5.0.0",
+    "@pact-foundation/pact-node": ">=10.13.0"
   },
   "devDependencies": {
-    "@pact-foundation/pact-node": "^7.0.1",
+    "@pact-foundation/pact-node": "^10.13.1",
     "chai": "4.2.0",
     "chai-as-promised": "7.1.1",
     "jasmine-core": "3.3.0",
