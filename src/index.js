@@ -13,7 +13,7 @@ const runPactMockServer = (pacts, logger) => {
 		pacts.map(pact => {
 			log.info("Starting Pact Mock Server...")
 			const server = wrapper.createServer(pact);
-			server.start()
+			return server.start()
 				.then(
 					() => {
 						log.info('Pact Mock Server running on port: ' + server.options.port);
