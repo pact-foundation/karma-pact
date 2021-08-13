@@ -1,6 +1,6 @@
 {
   "name": "@pact-foundation/karma-pact",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "Launches a Pact Mock Server for Karma",
   "main": "./src/index.js",
   "author": "Michel Boudreau <michelboudreau@gmail.com> (codinghitchhiker.com)",

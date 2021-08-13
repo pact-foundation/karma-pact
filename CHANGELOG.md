@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.1.0](https://github.com/pact-foundation/karma-pact/compare/v3.0.0...v3.1.0) (2021-08-13)
+
+
+### Features
+
+* **gh-actions:** Switching to GitHub actions ([931e0a5](https://github.com/pact-foundation/karma-pact/commit/931e0a52161054c945bb5eeb6d3e7a2c6eac5000))
+
+
+### Bug Fixes
+
+* **karma:** Corrected development dependencies ([25308a1](https://github.com/pact-foundation/karma-pact/commit/25308a135b97747cbe14daab1336c0e461405401))
+
 ## [3.0.0](https://github.com/pact-foundation/karma-pact/compare/v2.3.1...v3.0.0) (2021-08-12)
 
 
